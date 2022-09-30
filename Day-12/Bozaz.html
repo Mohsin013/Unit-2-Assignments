@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            width:80%;
+            display: flex;
+        }
+        #box1 {
+            width:50%;
+            margin-left: 50px; 
+        }
+        #box2{
+            width: 50%;
+           
+        }
+        #button{
+            padding:5px 15px;
+            background-color: royalblue;
+            color: white;
+            border: 0;
+            text-align: center;
+            margin-top: 20px;
+        }
+        th{
+           
+           padding:5px 40px 0 0;
+            font-size: 20px;
+            font-family: monospace;
+        }
+        td{
+            padding:5px 10px 0 0;
+            font-size: 17px;
+        }
+        h1{
+            color: #72a0b5;
+            font-family: sans-serif;
+        }
+        td{
+            padding-top: 10px;
+            font-size: 17px;
+            font-family: monospace;
+        }
+        p{
+            font-family: Helvetica;
+            margin:25px 0 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="box1">
+            <form>
+            <h1>Add Product</h1>
+            <p>Category</p>
+            <select id="sel" >
+                <option value="Electronics">Electronics</option>
+                <option value="Furniture">Furniture</option>
+                <option value="Home Appliance">Home appliance</option>
+                <option value="books">books</option>
+            </select>
+            <P>Title</P>
+            <input id="tex" type="text" placeholder="Some New">
+            <p>Description</p>
+            <textarea id="area" placeholder="Home" rows="5" cols="25"></textarea>
+            <p>Price</p>
+            <input id="num" type="number" placeholder="Enter Price"/>
+            <br>
+            <input id="button" type="submit" value="Add">
+            </form>
+            
+          
+        </div>
+        <div id="box2">
+            <h1>Product Info</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+document.querySelector("#button").addEventListener("click",taps);
+var bozaz=JSON.parse(localStorage.getItem("Mylist"))||[]
+mainfunction(bozaz)
+function taps(event){
+    event.preventDefault();
+var categ=document.querySelector("#sel").value;
+var titl=document.querySelector("#tex").value;
+var des=document.querySelector("#area").value;
+var pri=document.querySelector("#num").value;
+var details={cate:categ,tit:titl,desp:des,pric:pri}
+bozaz.push(details)
+localStorage.setItem("Mylist",JSON.stringify(bozaz));
+mainfunction(bozaz)
+}
+function mainfunction(bozaz){
+    console.log(bozaz)
+    document.querySelector("tbody").innerHTML="";
+    bozaz.map(function(item){
+        var tr=document.createElement("tr");
+        var td1=document.createElement("td");
+        td1.textContent=item.cate;
+        var td2=document.createElement("td");
+        td2.textContent=item.tit;
+        var td3=document.createElement("td");
+        td3.textContent=item.desp;
+        var td4=document.createElement("td");
+        td4.textContent=item.pric;
+        tr.append(td1,td2,td3,td4);
+        document.querySelector("tbody").append(tr);
+    })
+}
+
+</script>

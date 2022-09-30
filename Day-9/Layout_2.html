@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            display: grid;
+            grid-template-columns: repeat(12,1fr);
+            grid-template-rows: 80px 150px 150px 150px;
+            grid-gap: 30px;
+            grid-template-areas: 
+            "b1 b1 b1 b1 b1 b1 b1 b1 b1 b1 b1 b1"
+            "b2 b2 b2 b2 b2 b2 b2 b2 b3 b3 b3 b3"
+            "b2 b2 b2 b2 b2 b2 b2 b2 b4 b4 b4 b4"
+            "b2 b2 b2 b2 b2 b2 b2 b2 b5 b5 b5 b5"
+
+        }
+        
+        .box1{
+            background-color:yellow ;
+            grid-area: b1;
+            padding-left: 10px;
+            font-family: sans-serif;
+        }
+        .box2{
+           background-color:red ;
+            grid-area: b2;
+            color: dimgrey;
+            padding-left: 10px;
+            font-family: monospace;
+            font-size:17px
+        }
+        .box3{
+            background-color: lime;
+            grid-area: b3;
+            color: dimgrey;
+            padding-left: 10px;
+            font-family: monospace;
+            font-size:17px
+        }
+        .box4{
+            background-color: lime;
+            grid-area: b4;
+            color: dimgrey;
+            padding-left: 10px;
+            font-family: monospace;
+            font-size:17px
+        }
+        .box5{
+            background-color: lime;
+            grid-area: b5;
+            color: dimgrey;
+            padding-left: 10px;
+            font-family: monospace;
+            font-size:17px
+        }
+        @media only screen and (max-width:600px){
+            #container{
+                grid-template-rows: 80px 150px 120px 120px 120px;
+                grid-template-areas: 
+            "b1 b1 b1 b1 b1 b1 b1 b1 b1 b1 b1 b1"
+            "b2 b2 b2 b2 b2 b2 b2 b2 b2 b2 b2 b2"
+            "b3 b3 b3 b3 b3 b3 b3 b3 b3 b3 b3 b3"
+            "b4 b4 b4 b4 b4 b4 b4 b4 b4 b4 b4 b4"
+            "b5 b5 b5 b5 b5 b5 b5 b5 b5 b5 b5 b5";
+            grid-gap:20px
+            }
+        }
+        @media only screen and (min-width:601px) and (max-width:780px){
+            #container{
+                grid-template-rows: 80px 150px 150px 150px;
+                grid-template-areas: 
+            "b1 b1 b1 b1 b1 b1 b1 b1 b1 b1 b1 b1 "
+            "b2 b2 b2 b2 b2 b2 b2 b2 b2 b2 b2 b2"
+            "b2 b2 b2 b2 b2 b2 b2 b2 b2 b2 b2 b2"
+            "b3 b3 b3 b3 b4 b4 b4 b4 b5 b5 b5 b5"
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="box1">
+            <h1>Navigation</h1> </div>
+        <div class="box2">
+            <h2>Left Box</h2>     </div>
+        <div class="box3">
+            <h2>Right Box 1</h2> </div>
+        <div class="box4">
+            <h2>Right Box 2</h2> </div>
+        <div class="box5">
+            <h2>Right Box 3</h2> </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            display: grid;
+            grid-template-columns: repeat(12,1fr);
+            grid-template-rows: 80px 220px;
+            grid-gap: 20px;
+            grid-template-areas: 
+            "b1 b1 b1 b1 b1 b1 b1 b1 b1 b1 b1 b1 "
+            "b2 b2 b2 b3 b3 b3 b4 b4 b4 b5 b5 b5"
+
+        }
+        
+        .box1{
+            background-color:yellow ;
+            grid-area: b1;
+            padding-left: 10px;
+            font-family: sans-serif;
+        }
+        .box2{
+            background-color:red ;
+            grid-area: b2;
+            color: dimgrey;
+            padding-left: 10px;
+            font-family: monospace;
+        }
+        .box3{
+            background-color: lime;
+            grid-area: b3;
+            color: dimgrey;
+            padding-left: 10px;
+            font-family: monospace;
+        }
+        .box4{
+            background-color: royalblue;
+            grid-area: b4;
+            color: dimgrey;
+            padding-left: 10px;
+            font-family: monospace;
+        }
+        .box5{
+            background-color: darkgrey;
+            grid-area: b5;
+            color: dimgrey;
+            padding-left: 10px;
+            font-family: monospace;
+        }
+        @media only screen and (max-width:600px){
+            #container{
+                grid-template-rows: 80px 220px 220px 220px 220px;
+                grid-template-areas: 
+            "b1 b1 b1 b1 b1 b1 b1 b1 b1 b1 b1 b1"
+            "b2 b2 b2 b2 b2 b2 b2 b2 b2 b2 b2 b2"
+            "b5 b5 b5 b5 b5 b5 b5 b5 b5 b5 b5 b5"
+            "b3 b3 b3 b3 b3 b3 b3 b3 b3 b3 b3 b3"
+            "b4 b4 b4 b4 b4 b4 b4 b4 b4 b4 b4 b4"
+            }
+        }
+        @media only screen and (min-width:601px) and (max-width:780px){
+            #container{
+                grid-template-rows: 80px 220px 220px;
+                grid-template-areas: 
+            "b1 b1 b1 b1 b1 b1 b1 b1 b1 b1 b1 b1 "
+            "b2 b2 b2 b2 b2 b2 b4 b4 b4 b4 b4 b4"
+            "b3 b3 b3 b3 b3 b3 b5 b5 b5 b5 b5 b5"
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="box1">
+            <h1>Navigation</h1> </div>
+        <div class="box2">
+            <h1>Box1</h1>
+        </div>
+        <div class="box3">
+            <h1>Box2</h1> </div>
+        <div class="box4">
+            <h1>Box3</h1> </div>
+        <div class="box5">
+            <h1>Box4</h1> </div>
+    </div>
+</body>
+</html>

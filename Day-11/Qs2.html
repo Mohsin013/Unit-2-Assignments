@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    #container{
+        display:flex;
+        width:80%;
+        height:400px;
+        margin: 100px auto;
+    }
+    #container>div{
+        width:23%;
+        height:100%;
+        margin:0 20px;
+    }
+    .box{
+        width:100%;
+        height:75%;
+    } 
+    .smallbox{
+        display: flex;
+        justify-content: space-between;
+        padding: 0 90px 0 10px;
+    }
+    .smallbox>p{
+        margin-top:10px
+    }
+    .box>p{
+        font-family: sans-serif;
+        font-size: 14px;
+        color: grey;
+    }
+</style>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+      var p= document.createElement("div");
+   p.setAttribute("id","container")
+    var data = [
+    {
+        imgUrl:"https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi1.jpg.pagespeed.ic.mkSk-Af1ka.webp",
+        name:"LATEST MEN'S SNEAKER",
+        price:"$25.00",
+        strikedOffPrice:"$95.00"
+    },{
+        imgUrl:"https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi2.jpg.pagespeed.ic.uBrpABaJqp.webp",
+        name:"LATEST MEN'S SNEAKER",
+        price:"$35.00",
+        strikedOffPrice:"$100.00"
+    },{
+        imgUrl:"https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi3.jpg.pagespeed.ic.iO_cFEPy2K.webp",
+        name:"LATEST MEN'S SNEAKER",
+        price:"$35.00",
+        strikedOffPrice:"$100.00"
+    },
+    {
+        imgUrl:"https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi4.jpg.pagespeed.ic.kmiQW8I5wx.webp",
+        name:"LATEST MEN'S SNEAKER",
+        price:"$35.00",
+        strikedOffPrice:"$100.00"
+    }
+]
+
+data.map(function(elem){
+    var x=document.createElement("div")
+      var y=document.createElement("div");
+      y.setAttribute("class","box")
+     var z= document.createElement("div");
+     z.setAttribute("class","smallbox")
+     var image=document.createElement("img")
+     var t=elem.imgUrl
+        image.setAttribute("src",t)
+        var para=document.createElement("p")
+        para.textContent=elem.name;
+        y.append(image,para);
+        var para1=document.createElement("p")
+        para1.textContent=elem.price;
+        var para2=document.createElement("p")
+        para2.textContent=elem.strikedOffPrice;
+        z.append(para1,para2)
+     x.append(y,z)
+     p.append(x)
+})
+document.querySelector("body").append(p)
+</script>

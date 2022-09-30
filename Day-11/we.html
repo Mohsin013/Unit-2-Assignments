@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        #container{
+            margin:auto;
+            width:800px;
+            margin-top: 100px;
+        }
+        button{
+            color: white;
+            margin:10px;
+            padding:10px 20px;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+   var x= document.createElement("div");
+   x.setAttribute("id","container")
+   var bt1=document.createElement("button")
+   bt1.textContent="Primary"
+   bt1.style.backgroundColor="#0d6efd"
+   var bt2=document.createElement("button")
+   bt2.textContent="Secondary"
+   bt2.style.backgroundColor="#6c757d"
+   var bt3=document.createElement("button")
+   bt3.textContent="Success"
+   bt3.style.backgroundColor="#198754"
+   var bt4=document.createElement("button")
+   bt4.textContent="Danger"
+   bt4.style.backgroundColor="#dc3545"
+   var bt5=document.createElement("button")
+   bt5.textContent="Warning"
+   bt5.style.backgroundColor="#ffc008"
+   var bt6=document.createElement("button")
+   bt6.textContent="Info"
+   bt6.style.backgroundColor="#11caf0"
+
+   x.append(bt1,bt2,bt3,bt4,bt5,bt6)
+   document.querySelector("body").append(x)
+
+</script>

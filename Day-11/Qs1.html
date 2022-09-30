@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    #container{
+        display:flex;
+        width:400px;
+        height:220px;
+        margin: 100px auto;
+        border: 1px solid grey;
+    }
+    #container>div{
+        width:50%;
+        height:100%;
+    }
+    button{
+        background-color: #0d6efd;
+        color: white;
+        padding:5px 20px;
+        margin-top: 5px;
+    }
+    h2{
+        font-family: sans-serif;
+    }
+    p{
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 14px;
+    }
+   
+</style>
+</head>
+<body>
+    <script>
+        var x=document.createElement("div")
+        x.setAttribute("id","container");
+        var y=document.createElement("div")
+        var z=document.createElement("div")
+        var image=document.createElement("img")
+        image.setAttribute("src","https://via.placeholder.com/190x220")
+        y.append(image);
+        var head=document.createElement("h2")
+        head.textContent="Alice Liddel";
+        var para=document.createElement("p")
+        para.textContent="Alice is a Freelancer Web designer and  developer based in london. She is specialised in HTML5, CSS3, Javascript, Bootstrap etc "
+        var btn=document.createElement("button");
+        btn.textContent="View Profile"
+        z.append(head,para,btn)
+        x.append(y,z)
+        document.querySelector("body").append(x)
+    </script>
+</body>
+</html>

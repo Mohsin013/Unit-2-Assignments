@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" placeholder="Enter Age"/>
+    <button onclick="checkAge()">Check Age</button>
+    <p></p>
+</body>
+</html>
+<script>
+    function checkAge(){
+        var x =document.querySelector("input").value;
+        if(x>18){
+            document.querySelector("p").textContent="You can drive in India"
+        }else if(x<18){
+            document.querySelector("p").textContent="You can't drive in India"
+        }else{
+            document.querySelector("p").textContent="You are just old enough to drive in India!"
+        }
+    }
+</script>
